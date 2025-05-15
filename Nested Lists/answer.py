@@ -7,7 +7,8 @@ if __name__ == '__main__':
         dic.append([name, score])
         sr.append(score)
 
-    rdic = dic[::-1]
+    dic.sort()
+    sr = set(sr)
     low = secondLow = float('inf')
     for i in sr:
         if low >= i:
@@ -15,6 +16,6 @@ if __name__ == '__main__':
         elif secondLow >= i:
             secondLow = i
 
-    for i in range(len(rdic)):
-        if rdic[i][1] == secondLow:
-            print(rdic[i][0])
+    for i in range(len(dic)):
+        if dic[i][1] == secondLow:
+            print(dic[i][0])
